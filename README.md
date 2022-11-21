@@ -22,6 +22,8 @@ npm install
 npm run dev
 ```
 
+Then, go and set up [the back end](https://github.com/settermjd/gift-of-giving-backend).
+
 ### Compile and Minify for Production
 
 ```sh

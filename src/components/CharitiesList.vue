@@ -3,22 +3,28 @@
     <div id="pick-a-charity" class="mt-6 lg:mt-12">
       <h2 class="mb-3">Our Charities</h2>
       <div id="charities-list">
-        <div class="charity-item flex flex-col hover:drop-shadow-md" v-for="(charity, code) in charities">
+        <div
+          class="charity-item flex flex-col hover:drop-shadow-md"
+          v-for="(charity, code) in charities"
+          :key="code"
+        >
           <div id="charity-header" class="drop-shadow-md">
             <img
               :src="'/images/backgrounds/' + charity.image"
-              alt=""
+              :alt="`Background header image for ${charity.name}`"
               class="rounded-t-md"
             />
           </div>
           <div id="charity-details" class="px-4 pt-4">
             <h3 class="mb-4">{{ charity.name }}</h3>
-            <Markdown :source=charity.description />
+            <Markdown :source="charity.description" />
           </div>
           <div id="key-actions" v-if="charity.actions">
             <h4>Key Actions</h4>
             <ul>
-              <li v-for="action in charity.actions">{{ action }}</li>
+              <li v-for="action in charity.actions" :key="action">
+                {{ action }}
+              </li>
             </ul>
           </div>
           <div id="social-connections" v-if="charity.social">
@@ -59,6 +65,7 @@ import Markdown from "vue3-markdown-it";
 export default {
   data() {
     return {
+      api: "http://192.168.178.72:8080",
       charities: [],
     };
   },

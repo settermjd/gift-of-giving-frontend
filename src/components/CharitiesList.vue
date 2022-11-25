@@ -23,44 +23,20 @@
           </div>
           <div id="social-connections" v-if="charity.social">
             <h4>Connect Socially</h4>
-            <div class="flex" v-if="charity.social.twitter">
+            <div class="flex">
               <a
-                :href="'https://twitter.com/' + charity.social.twitter"
-                :title="'Follow' + charity.name + ' on Twitter'"
+                v-for="(username, platform) in charity.social"
+                :key="platform"
+                :href="`https://${platform}.com/${username}`"
+                :title="`Follow ${charity.name} on ${ucfirst(platform)}`"
                 class="mr-2"
                 target="_blank"
               >
                 <img
-                  src="/images/social-media-icons/twitter.png"
+                  :src="`/images/social-media-icons/${platform}.png`"
                   width="24"
                   class="contrast-50 grayscale hover:contrast-100 hover:grayscale-0 ease-in-out duration-200"
-                  :alt="'Follow ' + charity.name + ' on Twitter'"
-              /></a>
-              <a
-                :href="'https://twitter.com/' + charity.social.linkedin"
-                :title="'Follow ' + charity.name + ' on LinkedIn'"
-                class="mr-2"
-                target="_blank"
-                v-if="charity.social.twitter"
-              >
-                <img
-                  src="/images/social-media-icons/linkedin.png"
-                  width="24"
-                  class="contrast-50 grayscale hover:contrast-100 hover:grayscale-0 ease-in-out duration-200"
-                  :alt="'Follow ' + charity.name + ' on LinkedIn'"
-              /></a>
-              <a
-                :href="'https://twitter.com/' + charity.social.instagram"
-                :title="'Follow ' + charity.name + ' on Instagram'"
-                class="mr-2"
-                target="_blank"
-                v-if="charity.social.instagram"
-              >
-                <img
-                  src="/images/social-media-icons/instagram.png"
-                  width="24"
-                  class="contrast-50 grayscale hover:contrast-100 hover:grayscale-0 ease-in-out duration-200"
-                  :alt="'Follow ' + charity.name + ' on Instagram'"
+                  :alt="`Follow ${charity.name} on ${ucfirst(platform)}`"
               /></a>
             </div>
           </div>
@@ -92,11 +68,15 @@ export default {
   name: "CharitiesList",
   methods: {
     async fetchData() {
-      const res = await fetch(`http://192.168.178.72:8080/charities`, {
+      const res = await fetch(`${this.api}/charities`, {
         mode: "cors",
       });
       this.charities = await res.json();
       console.log(this.charities);
+    },
+    ucfirst: function(str) {
+      if (!str) return str;
+      return str[0].toUpperCase() + str.slice(1);
     },
   },
   mounted() {

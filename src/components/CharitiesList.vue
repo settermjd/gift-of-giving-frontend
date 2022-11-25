@@ -1,6 +1,6 @@
 <template>
   <div class="mt-4">
-    <div id="pick-a-charity" class="mt-6">
+    <div id="pick-a-charity" class="mt-6 lg:mt-12">
       <h2 class="mb-3">Our Charities</h2>
       <div id="charities-list">
         <div class="charity-item flex flex-col hover:drop-shadow-md" v-for="(charity, code) in charities">
@@ -66,7 +66,7 @@
           </div>
           <div id="donate-wrapper" class="pt-4">
             <button
-              class="donate rounded-b-md w-full py-4 font-bold text-white uppercase bg-purple-900 hover:bg-purple-800 ease-in-out duration-200"
+              class="donate rounded-b-md w-full py-8 font-bold text-white uppercase bg-purple-900 hover:bg-purple-800 ease-in-out duration-200"
             >
               Donate &rarr;
             </button>

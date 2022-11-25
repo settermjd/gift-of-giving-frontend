@@ -30,11 +30,11 @@
   }
 
   h3 {
-    @apply text-lg md:text-xl lg:text-2xl md:text-xl m-0 font-bold;
+    @apply text-lg md:text-2xl lg:text-3xl m-0 font-bold;
   }
 
   h4 {
-    @apply text-lg md:text-lg mt-4;
+    @apply text-lg md:text-xl mt-6 font-bold;
   }
 
   header {
@@ -87,7 +87,7 @@
   }
 
   li {
-    @apply ml-4 text-slate-600;
+    @apply ml-6 mb-2 mt-3 text-base text-slate-600 md:text-lg;
   }
 }
 
@@ -138,7 +138,7 @@
   }
 
   .charity-item p {
-    @apply mb-1 leading-relaxed mb-2 text-slate-700;
+    @apply mb-1 leading-relaxed mb-2 md:text-lg text-slate-700;
   }
 
   .charity-image {
@@ -150,7 +150,7 @@
   }
 
   #charities-list {
-    @apply mt-4 mb-8 grid grid-cols-1 lg:grid-cols-3 gap-4;
+    @apply mt-4 mb-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8;
   }
 
   #key-actions {

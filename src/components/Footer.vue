@@ -7,7 +7,7 @@
       {{ year }}. All rights reserved.
     </div>
     <div id="image-credits">
-      <div>Social media icon credits</div>
+      <div class="mb-2 mt-2">Social media icon credits</div>
       <ul class="list-outside list-disc ml-4">
         <li>
           <a

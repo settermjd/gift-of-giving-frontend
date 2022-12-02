@@ -67,7 +67,7 @@ import Markdown from "vue3-markdown-it";
 export default {
   data() {
     return {
-      api: "http://192.168.178.72:8080",
+      api: "http://localhost:8080",
       charities: [],
     };
   },

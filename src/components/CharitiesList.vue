@@ -83,7 +83,7 @@ export default {
       this.charities = await res.json();
       console.log(this.charities);
     },
-    ucfirst: function(str) {
+    ucfirst: function (str) {
       if (!str) return str;
       return str[0].toUpperCase() + str.slice(1);
     },

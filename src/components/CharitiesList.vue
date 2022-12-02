@@ -47,11 +47,13 @@
             </div>
           </div>
           <div id="donate-wrapper" class="pt-4">
-            <button
-              class="donate rounded-b-md w-full py-8 font-bold text-white uppercase bg-purple-900 hover:bg-purple-800 ease-in-out duration-200"
+            <a
+              :href="`${charity.donation_link}`"
+              class="donate block text-center no-underline rounded-b-md w-full py-8 font-bold text-white uppercase bg-purple-900 hover:bg-purple-800 ease-in-out duration-200"
+              target="_blank"
             >
               Donate &rarr;
-            </button>
+            </a>
           </div>
         </div>
       </div>
